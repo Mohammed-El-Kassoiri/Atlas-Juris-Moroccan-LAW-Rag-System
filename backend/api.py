@@ -300,7 +300,7 @@ def extract_text_from_gemini_response(resp) -> str:
         return None
 
 def call_gemini_generate(prompt, model_name="gemini-2.5-flash", max_output_tokens=None, temperature=0.0):
-    api_key = "AIzaSyArOg9PSDtMQAOLAXERLdShaaSSxEnj_J8"
+    api_key = os.getenv("GEMINI_API_KEY")
     if genai is None:
         raise RuntimeError("google-genai library not installed. pip install google-genai")
     if not api_key:
@@ -397,4 +397,5 @@ async def query(request: QueryRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
