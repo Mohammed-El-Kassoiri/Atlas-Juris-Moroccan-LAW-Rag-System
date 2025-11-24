@@ -1,0 +1,12 @@
+torch>=2.0
+transformers>=4.30
+sentence-transformers>=2.2
+faiss-cpu>=1.7.4   # or faiss-gpu if you have CUDA and want GPU speed
+PyPDF2>=3.0.0
+tqdm
+peft
+datasets
+streamlit
+bitsandbytes  # for 4-bit quantization (GPU speedup)
+accelerate    # for optimized model loading
+pypdf        # updated PDF reader
